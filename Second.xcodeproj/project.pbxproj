@@ -7,21 +7,32 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C31078841DF46DAD00BC96AE /* StatChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31078831DF46DAD00BC96AE /* StatChartView.swift */; };
+		C31C0BD31DE8EF4400C3F2DC /* ShapeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31C0BD21DE8EF4400C3F2DC /* ShapeView.swift */; };
+		C321A4461E017E6200A2579A /* ParentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C321A4451E017E6200A2579A /* ParentViewController.swift */; };
+		C331E62F1DF0A3D50005D0CA /* StatisticViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C331E62E1DF0A3D50005D0CA /* StatisticViewController.swift */; };
 		C33F957F1DE331C5007DB948 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C33F957E1DE331C5007DB948 /* AppDelegate.swift */; };
-		C33F95811DE331C5007DB948 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C33F95801DE331C5007DB948 /* ViewController.swift */; };
+		C33F95811DE331C5007DB948 /* LiveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C33F95801DE331C5007DB948 /* LiveViewController.swift */; };
 		C33F95841DE331C5007DB948 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C33F95821DE331C5007DB948 /* Main.storyboard */; };
 		C33F95861DE331C5007DB948 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C33F95851DE331C5007DB948 /* Assets.xcassets */; };
 		C33F95891DE331C5007DB948 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C33F95871DE331C5007DB948 /* LaunchScreen.storyboard */; };
+		C3FDECF51DEDE3E90047B461 /* HeartRateModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C3FDECF31DEDE3E90047B461 /* HeartRateModel.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C31078831DF46DAD00BC96AE /* StatChartView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatChartView.swift; sourceTree = "<group>"; };
+		C31C0BD21DE8EF4400C3F2DC /* ShapeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShapeView.swift; sourceTree = "<group>"; };
+		C321A4451E017E6200A2579A /* ParentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParentViewController.swift; sourceTree = "<group>"; };
+		C331E62E1DF0A3D50005D0CA /* StatisticViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatisticViewController.swift; sourceTree = "<group>"; };
 		C33F957B1DE331C5007DB948 /* Second.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Second.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C33F957E1DE331C5007DB948 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		C33F95801DE331C5007DB948 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		C33F95801DE331C5007DB948 /* LiveViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveViewController.swift; sourceTree = "<group>"; };
 		C33F95831DE331C5007DB948 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C33F95851DE331C5007DB948 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C33F95881DE331C5007DB948 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C33F958A1DE331C5007DB948 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C3FDECF41DEDE3E90047B461 /* HeartRateModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = HeartRateModel.xcdatamodel; sourceTree = "<group>"; };
+		C3FDED3E1DEDEE120047B461 /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -39,6 +50,7 @@
 			isa = PBXGroup;
 			children = (
 				C33F957D1DE331C5007DB948 /* Second */,
+				C3FDED3D1DEDEE120047B461 /* Frameworks */,
 				C33F957C1DE331C5007DB948 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -55,13 +67,42 @@
 			isa = PBXGroup;
 			children = (
 				C33F957E1DE331C5007DB948 /* AppDelegate.swift */,
-				C33F95801DE331C5007DB948 /* ViewController.swift */,
+				C321A4451E017E6200A2579A /* ParentViewController.swift */,
+				C33F95801DE331C5007DB948 /* LiveViewController.swift */,
+				C331E62E1DF0A3D50005D0CA /* StatisticViewController.swift */,
+				C38DBEE51E009E4300B13154 /* Views */,
+				C3FDECF31DEDE3E90047B461 /* HeartRateModel.xcdatamodeld */,
 				C33F95821DE331C5007DB948 /* Main.storyboard */,
+				C34042091DF33D5C002AF4C0 /* Supporting Files */,
+			);
+			path = Second;
+			sourceTree = "<group>";
+		};
+		C34042091DF33D5C002AF4C0 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
 				C33F95851DE331C5007DB948 /* Assets.xcassets */,
 				C33F95871DE331C5007DB948 /* LaunchScreen.storyboard */,
 				C33F958A1DE331C5007DB948 /* Info.plist */,
 			);
-			path = Second;
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		C38DBEE51E009E4300B13154 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				C31C0BD21DE8EF4400C3F2DC /* ShapeView.swift */,
+				C31078831DF46DAD00BC96AE /* StatChartView.swift */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		C3FDED3D1DEDEE120047B461 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C3FDED3E1DEDEE120047B461 /* NotificationCenter.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,7 +178,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C33F95811DE331C5007DB948 /* ViewController.swift in Sources */,
+				C3FDECF51DEDE3E90047B461 /* HeartRateModel.xcdatamodeld in Sources */,
+				C31078841DF46DAD00BC96AE /* StatChartView.swift in Sources */,
+				C31C0BD31DE8EF4400C3F2DC /* ShapeView.swift in Sources */,
+				C321A4461E017E6200A2579A /* ParentViewController.swift in Sources */,
+				C331E62F1DF0A3D50005D0CA /* StatisticViewController.swift in Sources */,
+				C33F95811DE331C5007DB948 /* LiveViewController.swift in Sources */,
 				C33F957F1DE331C5007DB948 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -261,6 +307,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 3B4HYH3EL8;
 				INFOPLIST_FILE = Second/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.odvan.Second;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -274,6 +321,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 3B4HYH3EL8;
 				INFOPLIST_FILE = Second/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.odvan.Second;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -300,8 +348,22 @@
 				C33F958F1DE331C5007DB948 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		C3FDECF31DEDE3E90047B461 /* HeartRateModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				C3FDECF41DEDE3E90047B461 /* HeartRateModel.xcdatamodel */,
+			);
+			currentVersion = C3FDECF41DEDE3E90047B461 /* HeartRateModel.xcdatamodel */;
+			path = HeartRateModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = C33F95731DE331C5007DB948 /* Project object */;
 }
