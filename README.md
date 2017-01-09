@@ -13,3 +13,6 @@ Technologies:
 - seamlessly combining it with tableview;
 - creating chart from Core Data fetch request;
 - some skills creating bezier path and basic geometrical figures.
+
+![simulator screen shot 14 dec 2016 17 03 33](https://cloud.githubusercontent.com/assets/23110283/21785524/9385fa14-d6c8-11e6-9ce5-2c517fdb9bf3.png)
+![simulator screen shot 14 dec 2016 17 03 39](https://cloud.githubusercontent.com/assets/23110283/21785532/98993a98-d6c8-11e6-9ed4-38061619d28c.png)
