@@ -118,7 +118,7 @@ class StatChartView: UIView {
         let graphPath = UIBezierPath()
         // Go to start of line
         graphPath.move(to: CGPoint(x: columnXPoint(0),
-                                      y: columnYPoint(chartElements[29])))
+                                      y: columnYPoint(chartElements.last!)))
         graphPath.addLine(to: CGPoint(x: columnXPoint(0), y: height - bottomBorder))
         
         // Add lines for each item in the chartElements array
