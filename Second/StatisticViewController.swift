@@ -98,6 +98,8 @@ class StatisticViewController: UIViewController, UITableViewDelegate, UITableVie
             print("error in chartElementsFetch")
         }
 
+        if labelsElements.count > 0 {
+        
         min.text = "Min: \(labelsElements.min()!)"
         max.text = "Max: \(labelsElements.max()!)"
         
@@ -109,6 +111,12 @@ class StatisticViewController: UIViewController, UITableViewDelegate, UITableVie
         
         min_column.text = "0"
         max_column.text = "\(labelsElements.max()!)"
+        
+        } else {
+            
+        }
+        
+        
     }
     
     

@@ -52,7 +52,7 @@ class ParentViewController: UIViewController {
             vc.view.frame = self.contentView.bounds
             self.contentView.addSubview(vc.view)
             self.currentViewController = vc
-            vc.viewWillAppear(true)
+            //vc.viewWillAppear(true)
         }
     }
     

@@ -84,7 +84,8 @@ class StatChartView: UIView {
         
         chartElementsFetch()
         
-        
+        if chartElements.count > 0 {
+            
         // Calculate the X-point
         
         let margin: CGFloat = 12.0
@@ -134,6 +135,8 @@ class StatChartView: UIView {
         graphPath.lineCapStyle = .round
         graphPath.stroke()
         
+    
+    
         // Draw horizontal graph lines on the top of everything
         let linePath = UIBezierPath()
         
@@ -154,6 +157,8 @@ class StatChartView: UIView {
         
         linePath.lineWidth = 1.0
         linePath.stroke()
+            
+        }
 
     }
  
