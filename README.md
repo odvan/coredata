@@ -1,6 +1,6 @@
 # coredata
 
-Swift 3.0, Xcode 8.xx
+Swift 3.0, Xcode 8.xx (iPhone 6/6s/7)
 
 App to show basic skills with Core Data. Imagine some sensor like apple watch or kind of for measuring heart rate.
 App is putting each minute new value in Core Data database. Depending upon heart rate the main window show different geometrical figures (NASA stuff for astrounats). Slider at the bottom imitate different pulse (beats per minute).
