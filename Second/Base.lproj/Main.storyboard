@@ -48,6 +48,7 @@
         <!--Parent View Controller-->
         <scene sceneID="Jl0-bt-m8v">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Caa-cg-Lxp" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="2DZ-0t-aZs" customClass="ParentViewController" customModule="Second" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="IUq-q1-P7R"/>
@@ -70,29 +71,29 @@
                             <constraint firstAttribute="trailing" secondItem="EB0-wu-8E7" secondAttribute="trailing" id="e7m-CY-u8t"/>
                         </constraints>
                     </view>
+                    <toolbarItems/>
                     <navigationItem key="navigationItem" id="o3Y-DD-CIV">
-                        <barButtonItem key="leftBarButtonItem" id="ND9-dJ-vqG">
-                            <segmentedControl key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" id="xRK-gj-WBA">
-                                <rect key="frame" x="16" y="7" width="343" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <segments>
-                                    <segment title="Live Beat"/>
-                                    <segment title="Statistic"/>
-                                </segments>
-                                <connections>
-                                    <action selector="switchTabsWithSender:" destination="2DZ-0t-aZs" eventType="valueChanged" id="9qM-t7-0Ps"/>
-                                </connections>
-                            </segmentedControl>
-                        </barButtonItem>
+                        <nil key="title"/>
+                        <segmentedControl key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" segmentControlStyle="bordered" selectedSegmentIndex="0" id="8gf-O5-6hZ">
+                            <rect key="frame" x="15" y="7" width="346" height="30"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <segments>
+                                <segment title="Live Beat"/>
+                                <segment title="Statistic"/>
+                            </segments>
+                            <connections>
+                                <action selector="switchTabsWithSender:" destination="2DZ-0t-aZs" eventType="valueChanged" id="IIZ-sI-lSu"/>
+                            </connections>
+                        </segmentedControl>
                     </navigationItem>
+                    <nil key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="contentView" destination="EB0-wu-8E7" id="eiA-4p-rin"/>
-                        <outlet property="segmentedSwitch" destination="xRK-gj-WBA" id="eKm-pM-3Ru"/>
+                        <outlet property="segmentedSwitch" destination="8gf-O5-6hZ" id="Ibp-2t-CNs"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Caa-cg-Lxp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="368.5" y="814.5"/>
+            <point key="canvasLocation" x="623.20000000000005" y="813.64317841079469"/>
         </scene>
         <!--Statistic View Controller-->
         <scene sceneID="oDZ-IL-5rq">
@@ -114,11 +115,11 @@
                                         <rect key="frame" x="0.0" y="56" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="4n4-Mc-Y72" id="03a-Ga-0AI">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ZDe-XX-1vX">
-                                                    <rect key="frame" x="15" y="11" width="35.5" height="21.5"/>
+                                                    <rect key="frame" x="15" y="11" width="36" height="22"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                     <nil key="textColor"/>
@@ -164,21 +165,33 @@
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="max" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Ak-hQ-Sp5">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="max" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Ak-hQ-Sp5">
                                         <rect key="frame" x="325" y="-1" width="42" height="21"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="21" id="MOl-sb-gnH"/>
+                                            <constraint firstAttribute="width" constant="42" id="NFQ-oC-pg5"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gEB-yq-aHT">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gEB-yq-aHT">
                                         <rect key="frame" x="325" y="163" width="42" height="21"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="21" id="8ai-hc-lTb"/>
+                                            <constraint firstAttribute="width" constant="42" id="Miq-jD-l80"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="gEB-yq-aHT" secondAttribute="bottom" id="32r-M6-pP7"/>
+                                    <constraint firstAttribute="trailing" secondItem="gEB-yq-aHT" secondAttribute="trailing" constant="8" id="QLd-bG-N8U"/>
+                                    <constraint firstAttribute="trailing" secondItem="4Ak-hQ-Sp5" secondAttribute="trailing" constant="8" id="bWi-QG-fbK"/>
+                                    <constraint firstItem="4Ak-hQ-Sp5" firstAttribute="top" secondItem="WDs-tk-Re8" secondAttribute="top" constant="-1" id="wlb-L3-gh3"/>
+                                </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
