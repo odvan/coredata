@@ -17,5 +17,5 @@ Technologies:
 - some skills creating bezier path and basic geometrical figures;
 - segmented control for switching between viewcontrollers.
 
-![simulator screen shot 14 dec 2016 17 03 33](https://cloud.githubusercontent.com/assets/23110283/21785524/9385fa14-d6c8-11e6-9ce5-2c517fdb9bf3.png)
-![simulator screen shot 14 dec 2016 17 03 39](https://cloud.githubusercontent.com/assets/23110283/21785532/98993a98-d6c8-11e6-9ed4-38061619d28c.png)
+![cd_01](https://cloud.githubusercontent.com/assets/23110283/22407194/e4cc736c-e672-11e6-80d6-c00f65f980c0.png)
+![cd_02](https://cloud.githubusercontent.com/assets/23110283/22407196/e7965d1a-e672-11e6-92a6-eca750c4dc5f.png)
