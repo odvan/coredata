@@ -18,6 +18,7 @@ Technologies:
 - segmented control for switching between viewcontrollers.
 
 With different heart rate figures changes (in theory):
+
 ![coredatademo-00](https://user-images.githubusercontent.com/23110283/27285185-75d7412a-5504-11e7-9339-8388e00e4e29.gif)
 
 ![cd_01](https://cloud.githubusercontent.com/assets/23110283/22407194/e4cc736c-e672-11e6-80d6-c00f65f980c0.png)
