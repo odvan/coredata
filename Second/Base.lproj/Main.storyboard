@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1212" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="gjP-x6-dOT">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1421" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="gjP-x6-dOT">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -48,18 +48,17 @@
         <!--Parent View Controller-->
         <scene sceneID="Jl0-bt-m8v">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Caa-cg-Lxp" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="2DZ-0t-aZs" customClass="ParentViewController" customModule="Second" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="IUq-q1-P7R"/>
                         <viewControllerLayoutGuide type="bottom" id="5Pk-2l-XeC"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="cJV-Zj-qY9">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EB0-wu-8E7">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <rect key="frame" x="0.0" y="-64" width="375" height="667"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                         </subviews>
@@ -92,6 +91,7 @@
                         <outlet property="segmentedSwitch" destination="8gf-O5-6hZ" id="Ibp-2t-CNs"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Caa-cg-Lxp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="623.20000000000005" y="813.64317841079469"/>
         </scene>
@@ -108,7 +108,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="4At-ZT-gun">
-                                <rect key="frame" x="0.0" y="220" width="375" height="447"/>
+                                <rect key="frame" x="0.0" y="284" width="375" height="383"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="statCell" textLabel="ZDe-XX-1vX" detailTextLabel="wUK-mL-C1G" style="IBUITableViewCellStyleValue1" id="4n4-Mc-Y72">
@@ -142,7 +142,7 @@
                                 </connections>
                             </tableView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WDs-tk-Re8" customClass="StatChartView" customModule="Second" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="375" height="184"/>
+                                <rect key="frame" x="0.0" y="92" width="375" height="184"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Min = " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fuG-2d-lQ3">
                                         <rect key="frame" x="12" y="-1" width="55" height="21"/>
@@ -197,12 +197,12 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="fhV-jh-IPn" firstAttribute="top" secondItem="4At-ZT-gun" secondAttribute="bottom" id="4dc-vJ-YP5"/>
-                            <constraint firstItem="WDs-tk-Re8" firstAttribute="top" secondItem="PNK-2j-ZqX" secondAttribute="bottom" constant="8" symbolic="YES" id="8Re-gE-Uw7"/>
+                            <constraint firstItem="WDs-tk-Re8" firstAttribute="top" secondItem="PNK-2j-ZqX" secondAttribute="bottom" constant="72" id="8Re-gE-Uw7"/>
                             <constraint firstItem="4At-ZT-gun" firstAttribute="leading" secondItem="STS-Ec-Pkv" secondAttribute="leading" id="Pep-GC-3BI"/>
                             <constraint firstItem="WDs-tk-Re8" firstAttribute="leading" secondItem="STS-Ec-Pkv" secondAttribute="leading" id="aYN-uk-d5D"/>
                             <constraint firstAttribute="trailing" secondItem="WDs-tk-Re8" secondAttribute="trailing" id="fbZ-vH-Ry7"/>
                             <constraint firstAttribute="trailing" secondItem="4At-ZT-gun" secondAttribute="trailing" id="g8V-hJ-p67"/>
-                            <constraint firstItem="4At-ZT-gun" firstAttribute="top" secondItem="PNK-2j-ZqX" secondAttribute="bottom" constant="200" id="j7b-pc-e9o"/>
+                            <constraint firstItem="4At-ZT-gun" firstAttribute="top" secondItem="PNK-2j-ZqX" secondAttribute="bottom" constant="264" id="j7b-pc-e9o"/>
                             <constraint firstItem="4At-ZT-gun" firstAttribute="top" secondItem="WDs-tk-Re8" secondAttribute="bottom" constant="8" symbolic="YES" id="pDG-0j-GhF"/>
                         </constraints>
                     </view>
@@ -225,9 +225,10 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="gjP-x6-dOT" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="hCb-5G-K9y">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="hCb-5G-K9y">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>

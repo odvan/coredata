@@ -15,12 +15,8 @@ class ShapeView: UIView {
     let lineWidth: CGFloat = 3
     var fillColor: UIColor!
     var path: UIBezierPath!
-    var bits: Int? = 60 {
-        didSet {
-            print("setNeedsDisplay")
-            setNeedsDisplay()
-        }
-    }
+    var bits: Int? = 60
+
     
     // MARK: Choosing geometrical figure according to heart rate
     
@@ -32,7 +28,7 @@ class ShapeView: UIView {
         switch pulse {
             
         case 0...39:
-            figure = UIBezierPath(ovalIn: insetRect)
+            figure = UIBezierPath(ovalIn: insetRect) // Circle
             
         case 40...75:
             figure = UIBezierPath(roundedRect: insetSquare, cornerRadius: 10.0)
@@ -54,7 +50,7 @@ class ShapeView: UIView {
     
     // MARK: Drawing geometrical figures
     
-    func trianglePathInRect(rect:CGRect) -> UIBezierPath {
+    func trianglePathInRect(rect:CGRect) -> UIBezierPath { // Triangle
         let path = UIBezierPath()
         
         path.move(to: CGPoint(x: rect.width / 2.0, y: rect.origin.y))
@@ -69,7 +65,7 @@ class ShapeView: UIView {
         return CGPoint(x: radius * cos(angle) + offset.x, y: radius * sin(angle) + offset.y)
     }
     
-    func regularPolygonInRect(rect: CGRect, pulse: Int) -> UIBezierPath {
+    func regularPolygonInRect(rect: CGRect, pulse: Int) -> UIBezierPath { // Polygon
         
         let degree = pulse/10 - 5
         
@@ -93,7 +89,7 @@ class ShapeView: UIView {
         return path
     }
     
-    func starInRect(rect:CGRect, pulse: Int) -> UIBezierPath {
+    func starInRect(rect:CGRect, pulse: Int) -> UIBezierPath { // Star shaped
         
         var degree = pulse / 10 - 12
         degree = degree % 2 == 0 ? degree + 8 : degree + 7

@@ -26,15 +26,24 @@ class LiveViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        view.backgroundColor = UIColor(red: 243/255, green: 113/255, blue: 90/255, alpha: 1.0)//UIColor(red: 255/255, green: 160/255, blue: 220/255, alpha: 1.0)
+        view.backgroundColor = UIColor(red: 243/255, green: 113/255, blue: 90/255, alpha: 1.0) //UIColor(red: 255/255, green: 160/255, blue: 220/255, alpha: 1.0)
         setupShapeView()
         
         let ti = 60
         Timer.scheduledTimer(timeInterval: TimeInterval(ti), target: self, selector: #selector(LiveViewController.addHeartRateIntoArray), userInfo: nil, repeats: true)
-        
-        
+
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        print("viewDidAppear")
+        randomNumber = CGFloat(arc4random_uniform(10) + 5)
+        
+        smoothAnimation(some: randomNumber!)
+        
+    }
+
     private func setupShapeView() {
         
         view.addSubview(shapeView)
@@ -45,7 +54,7 @@ class LiveViewController: UIViewController {
         shapeView.translatesAutoresizingMaskIntoConstraints = false
         
         shapeView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        shapeView.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
+        shapeView.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: 20).isActive = true
         shapeView.widthAnchor.constraint(equalToConstant: min(view.bounds.size.width, view.bounds.size.height)*0.8).isActive = true
         shapeView.heightAnchor.constraint(equalTo: shapeView.widthAnchor).isActive = true
         //shapeView.alpha = 0
@@ -53,13 +62,15 @@ class LiveViewController: UIViewController {
     }
     
     private func smoothAnimation(some number: CGFloat) {
-        
+
         UIView.animate(withDuration: 30, delay: 2, options: [.autoreverse, .repeat], animations:
             { self.shapeView.transform = self.randomAnimation(number: number)
                 print("animation started")
+
         },
                        completion: { finished in
-                        
+                        self.shapeView.transform = CGAffineTransform.identity
+//if current vc is liveview ... start animation
                         print("animation completed")
         })
         
@@ -88,15 +99,24 @@ class LiveViewController: UIViewController {
     @IBAction func heartBitsChanging(_ sender: UISlider) {
         
         shapeView.bits = Int(self.pulseSlider.value)
+        shapeView.setNeedsDisplay()
         
         shapeView.transform = CGAffineTransform.identity
+        self.shapeView.layer.removeAllAnimations()
         
-        randomNumber = CGFloat(arc4random_uniform(10) + 5)
-        
-        print(randomNumber!)
-        smoothAnimation(some: randomNumber!)
-        
+//        if (!pulseSlider.isTracking) {
+//            print("stopped dragging slider")
+//            
+////            shapeView.transform = CGAffineTransform.identity
+////            self.shapeView.layer.removeAllAnimations()
+//            
+//            randomNumber = CGFloat(arc4random_uniform(10) + 5)
+//            //        print(randomNumber!)
+//            smoothAnimation(some: randomNumber!)
+//        
+//        }
     }
+    
     
     
     @objc private func addHeartRateIntoArray() {
@@ -108,9 +128,9 @@ class LiveViewController: UIViewController {
         
         heartRate.rate = Int32(pulseSlider.value)
         heartRate.time = NSDate()
-                
+        
         appDelegate.saveContext()
-                
+        
         print("rate: \(heartRate.rate), time: \(heartRate.time)")
         
         heartRateStat()

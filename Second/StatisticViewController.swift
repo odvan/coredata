@@ -75,7 +75,7 @@ class StatisticViewController: UIViewController, UITableViewDelegate, UITableVie
     }
     
     
-    func labelsSetup() { // seems excessive cause it doubling fetch request in StatChartView
+    func labelsSetup() { // seems excessive cause it doubling fetch request in StatChartView: DONE!
         
         labelsElements = []
         
@@ -99,20 +99,20 @@ class StatisticViewController: UIViewController, UITableViewDelegate, UITableVie
         }
 
         if labelsElements.count > 0 {
-        
-        min.text = "Min: \(labelsElements.min()!)"
-        max.text = "Max: \(labelsElements.max()!)"
-        
-        var average = labelsElements.reduce(0) { (total: Int, next: Int) -> Int in
-            return total + next
-        }
-        average = average / labelsElements.count
-        avg.text = "Avg: \(average)"
-        
-        min_column.text = "0"
-        max_column.text = "\(labelsElements.max()!)"
-        
-        } else {
+            
+            statChart.chartElements = labelsElements // sending fetched data to StatChartView
+            
+            min.text = "Min: \(labelsElements.min()!)"
+            max.text = "Max: \(labelsElements.max()!)"
+            
+            var average = labelsElements.reduce(0) { (total: Int, next: Int) -> Int in
+                return total + next
+            }
+            average = average / labelsElements.count
+            avg.text = "Avg: \(average)"
+            
+            min_column.text = "0"
+            max_column.text = "\(labelsElements.max()!)"
             
         }
         
@@ -205,8 +205,8 @@ extension StatisticViewController: NSFetchedResultsControllerDelegate {
     
     func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
         statTable.endUpdates()
-        statChart.setNeedsDisplay()
         labelsSetup()
+        statChart.setNeedsDisplay()
 
     }
 

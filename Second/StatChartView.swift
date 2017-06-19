@@ -11,37 +11,8 @@ import CoreData
 
 class StatChartView: UIView {
     
-    var context: NSManagedObjectContext? = ((UIApplication.shared.delegate) as? AppDelegate)?.persistentContainer.viewContext
+    var chartElements: [Int] = []
     
-    var chartElements = [Int]()
-    
-    
-    private func chartElementsFetch() {
-        
-        chartElements = []
-        
-        let request = NSFetchRequest<HeartRate>(entityName: "HeartRate")
-        
-        let timeSortDescriptor = NSSortDescriptor(key: "time", ascending: false)
-        request.sortDescriptors = [timeSortDescriptor]
-        request.fetchLimit = 30
-//        request.resultType = .dictionaryResultType
-//        request.propertiesToFetch = ["rate"]
-        
-        do {
-            
-            let result = try context!.fetch(request)
-                        
-            for element in result {
-                
-                chartElements.append(Int(element.rate))
-                print("\(element.rate)")
-            }
-        } catch {
-                print("error in chartElementsFetch")
-            }
-        }
-
     private func gradientColorBackground() {
         let startColor: UIColor = UIColor(red: 243/255, green: 113/255, blue: 90/255, alpha: 1.0)
         let endColor: UIColor = UIColor.orange
@@ -74,15 +45,15 @@ class StatChartView: UIView {
     
     // Only override draw() if you perform custom drawing.
     // An empty implementation adversely affects performance during animation.
+    
     override func draw(_ rect: CGRect) {
-        // Drawing code
+    
+        // Drawing code for our heart rate stat chart
         
         let width = rect.width
         let height = rect.height
 
         gradientColorBackground()
-        
-        chartElementsFetch()
         
         if chartElements.count > 0 {
             
@@ -91,7 +62,8 @@ class StatChartView: UIView {
         let margin: CGFloat = 12.0
         let columnXPoint = { (column: Int) -> CGFloat in
             // Calculate gap between points
-            let spacer = (width - margin*2) / CGFloat((self.chartElements.count - 1))
+            let divider = (self.chartElements.count == 1) ? 1 : self.chartElements.count - 1
+            let spacer = (width - margin*2) / CGFloat(divider) //29.0//CGFloat((self.chartElements.count - 1))
             var x: CGFloat = CGFloat(column) * spacer
             x += margin
             return x
@@ -104,8 +76,7 @@ class StatChartView: UIView {
         let graphHeight = height - topBorder - bottomBorder
         let maxValue = chartElements.max()
         let columnYPoint = { (graphPoint: Int) -> CGFloat in
-            var y: CGFloat = CGFloat(graphPoint) /
-                CGFloat(maxValue!) * graphHeight
+            var y: CGFloat = CGFloat(graphPoint) / CGFloat(maxValue!) * graphHeight
             y = graphHeight + topBorder - y // Flip the graph
             return y
         }
@@ -119,13 +90,13 @@ class StatChartView: UIView {
         let graphPath = UIBezierPath()
             
         // Go to start of line
-        graphPath.move(to: CGPoint(x: columnXPoint(0),
-                                      y: columnYPoint(chartElements.last!)))
-        graphPath.addLine(to: CGPoint(x: columnXPoint(0), y: height - bottomBorder))
+//        graphPath.move(to: CGPoint(x: columnXPoint(0),
+//                                      y: columnYPoint(chartElements.last!)))
+//        graphPath.addLine(to: CGPoint(x: columnXPoint(0), y: height - bottomBorder))
         
         // Add lines for each item in the chartElements array
         // At the correct (x, y) for the point
-        for i in 1..<chartElements.count {
+        for i in 0..<chartElements.count {
             let nextColumn = CGPoint(x: columnXPoint(i),
                                     y: columnYPoint(chartElements[chartElements.count - i - 1]))
             graphPath.move(to: nextColumn)
@@ -136,8 +107,6 @@ class StatChartView: UIView {
         graphPath.lineCapStyle = .round
         graphPath.stroke()
         
-    
-    
         // Draw horizontal graph lines on the top of everything
         let linePath = UIBezierPath()
         
