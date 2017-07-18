@@ -75,7 +75,7 @@ class StatisticViewController: UIViewController, UITableViewDelegate, UITableVie
     }
     
     
-    func labelsSetup() { // seems excessive cause it doubling fetch request in StatChartView: DONE!
+    func labelsSetup() { // seems excessive cause it doubling fetch request in StatChartView: fixed!
         
         labelsElements = []
         

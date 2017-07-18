@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import CoreData
 
 class StatChartView: UIView {
     
@@ -112,8 +111,7 @@ class StatChartView: UIView {
         
         // Top line
         linePath.move(to: CGPoint(x: margin, y: topBorder - 2))
-        linePath.addLine(to: CGPoint(x: width - margin,
-                                        y: topBorder - 2))
+        linePath.addLine(to: CGPoint(x: width - margin, y: topBorder - 2))
         
         // Center line
 //        linePath.move(to: CGPoint(x: margin, y: graphHeight/2 + topBorder))
@@ -121,7 +119,7 @@ class StatChartView: UIView {
         
         // Bottom line
         linePath.move(to: CGPoint(x: margin, y: height - bottomBorder + 2))
-        linePath.addLine(to: CGPoint(x: width - margin, y:height - bottomBorder + 2))
+        linePath.addLine(to: CGPoint(x: width - margin, y: height - bottomBorder + 2))
         let color = UIColor(white: 1.0, alpha: 0.3)
         color.setStroke()
         

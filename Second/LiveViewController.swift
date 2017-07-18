@@ -139,17 +139,16 @@ class LiveViewController: UIViewController {
     
     private func heartRateStat() {
         
-        context?.performAndWait {
+        context?.perform {
             let stat = try? self.context?.count(for: NSFetchRequest(entityName: "HeartRate"))
             print("\(stat!) records to date")
         }
         
         do {
-            let result = try context!.fetch(HeartRate.fetchRequest())
+            let request = NSFetchRequest<HeartRate>(entityName: "HeartRate")
+            let result = try context!.fetch(request)
             
-            let array = result as! [HeartRate]
-            
-            for element in array {
+            for element in result {
                 print("\(element.rate)")
             }
 
